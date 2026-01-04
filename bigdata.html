@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>MultiADS - Xử lý dữ liệu lớn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css">
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<section>
+  <h2>MultiADS</h2>
+  <p><b>Xử lý dữ liệu lớn với kỹ thuật giám sát nhận biết</b></p>
+  <br>
+  <p>Nhóm 7</p>
+  <p>
+    Nguyễn Vũ Nguyên<br>
+    Hoàng Mạnh Thiệp<br>
+    Phạm Thị Kim Huệ
+  </p>
+</section>
+
+<section>
+  <h3>Abstract</h3>
+  <ul>
+    <li>MultiADS là mô hình zero-shot và few-shot</li>
+    <li>Phát hiện & phân đoạn dị thường</li>
+    <li>Phân loại nhiều lỗi đồng thời</li>
+    <li>Kết hợp ảnh – văn bản</li>
+  </ul>
+</section>
+
+<section>
+  <h3>CLIP</h3>
+  <img src="image_clip.jpg" style="width:60%; border-radius:10px;">
+  <ul>
+    <li>Liên kết không gian ảnh – văn bản</li>
+    <li>Hỗ trợ zero-shot learning</li>
+  </ul>
+</section>
+
+<section>
+  <h3>Xử lý dữ liệu với MapReduce</h3>
+  <img src="image_clip1.jpg" style="width:60%; border-radius:10px;">
+</section>
+
+<section>
+  <h3>Alignment & Multi-scale Similarity</h3>
+  <img src="image_zr.jpg" style="width:60%; border-radius:10px;">
+  <ul>
+    <li>Linear Adapter căn chỉnh đặc trưng</li>
+    <li>Similarity Maps đa tầng</li>
+  </ul>
+</section>
+
+<section>
+  <h3>Xử lý dữ liệu với MapReduce</h3>
+  <img src="image_zr1.jpg" style="width:60%; border-radius:10px;">
+</section>
+
+<section>
+  <h3>Multi-type Segmentation Mask</h3>
+  <img src="image_seg.jpg" style="width:60%; border-radius:10px;">
+  <ul>
+    <li>Sinh mask theo K lớp</li>
+    <li>Nhận dạng nhiều dị thường cùng lúc</li>
+  </ul>
+</section>
+
+<section>
+  <h3>Xử lý dữ liệu với MapReduce</h3>
+  <img src="image_seg1.jpg" style="width:60%; border-radius:10px;">
+</section>
+
+
+<section>
+  <h2>Kết luận</h2>
+  <ul>
+    <li>Hiệu quả với dữ liệu lớn</li>
+    <li>Linh hoạt zero-shot / few-shot</li>
+    <li>Phù hợp hệ thống MapReduce</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Cảm ơn thầy và các bạn!</h2>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    slideNumber: true,
+    transition: 'slide'
+  });
+</script>
+
+</body>
+</html>
