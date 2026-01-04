@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>MultiADS - Xử lý dữ liệu lớn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css">
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<section>
+  <h2>MultiADS</h2>
+  <p><b>Xử lý dữ liệu lớn với kỹ thuật giám sát nhận biết</b></p>
+  <br>
+  <p>Nhóm 7</p>
+  <p>
+    Nguyễn Vũ Nguyên<br>
+    Hoàng Mạnh Thiệp<br>
+    Phạm Thị Kim Huệ
+  </p>
+</section>
+
+<section>
+  <h3>Abstract</h3>
+  <ul>
+    <li>MultiADS là mô hình zero-shot và few-shot</li>
+    <li>Phát hiện & phân đoạn dị thường</li>
+    <li>Phân loại nhiều lỗi đồng thời</li>
+    <li>Kết hợp ảnh – văn bản</li>
+  </ul>
+</section>
+
+
+<section>
+  <h3>Kiến trúc tổng thể</h3>
+  <img src="./image_kttt.jpg" style="width:60%; border-radius:10px;">
+  
+</section>
+
+<section>
+  <h3>CLIP</h3>
+  <img src="./image_clip.jpg" style="width:60%; border-radius:10px;">
+  <ul>
+    <li>Liên kết không gian ảnh – văn bản</li>
+    <li>Hỗ trợ zero-shot learning</li>
+  </ul>
+</section>
+
+<section>
+  <h3>Xử lý dữ liệu với MapReduce với mô hình CLIP</h3>
+  <img src="./image_clip1.jpg" style="width:60%; border-radius:10px;">
+</section>
+
+<section>
+  <h3>Alignment & Multi-scale Similarity</h3>
+  <img src="./image_zr.jpg" style="width:60%; border-radius:10px;">
+  <ul>
+    <li>Linear Adapter căn chỉnh đặc trưng</li>
+    <li>Similarity Maps đa tầng</li>
+  </ul>
+</section>
+
+<section>
+  <h3>Xử lý dữ liệu với MapReduce với mô hình Alignment & Multi-scale Similarity</h3>
+  <img src="./image_zr1.jpg" style="width:60%; border-radius:10px;">
+</section>
+
+<section>
+  <h3>Multi-type Segmentation Mask</h3>
+  <img src="./image_seg.jpg" style="width:60%; border-radius:10px;">
+  <ul>
+    <li>Sinh mask theo K lớp</li>
+    <li>Nhận dạng nhiều dị thường cùng lúc</li>
+  </ul>
+</section>
+
+<section>
+  <h3>Xử lý dữ liệu với MapReduce tổng thể</h3>
+  <img src="./image_seg1.jpg" style="width:60%; border-radius:10px;">
+</section>
+
+<section>
+  <h3>Dataset</h3>
+  <img src="./image_data.jpg" style="width:60%; border-radius:10px;">
+  <h3>Dataset</h3>
+  <img src="./image_data1.jpg" style="width:60%; border-radius:10px;">
+</section>
+
+<section>
+  <h3>Quá trình train</h3>
+  <img src="./image_qthl.jpg" style="width:60%; border-radius:10px;">
+  <h3>Kết quả train</h3>
+  <img src="./image_kqhl.jpg" style="width:60%; border-radius:10px;">
+</section>
+
+<section>
+  <h3>Quá trình test</h3>
+  <img src="./image_qttest.jpg" style="width:60%; border-radius:10px;">
+  <h3>Kết quả test</h3>
+  <img src="./image_kqtest.jpg" style="width:60%; border-radius:10px;">
+</section>
+
+
+<section>
+  <h2>Kết luận</h2>
+  <ul>
+    <li>Hiệu quả với dữ liệu lớn</li>
+    <li>Linh hoạt zero-shot / few-shot</li>
+    <li>Phù hợp hệ thống MapReduce</li>
+  </ul>
+</section>
+
+<section>
+  <h3>TÀI LIỆU THAM KHẢO (1)</h3>
+  <ul style="font-size: 0.85em;">
+    <li>[1] E. Sadikaj et al., “MultiADS: Defect-aware Supervision for Multi-type Anomaly Detection and Segmentation in Zero-Shot Learning”, ICCV 2025.</li>
+    <li>[2] Q. Zhou et al., “AnomalyCLIP: Object-agnostic prompt learning for zero-shot anomaly detection”, ICLR 2024.</li>
+    <li>[3] C. Wang et al., “Real-iad: A real-world multi-view dataset for industrial anomaly detection”, CVPR 2024.</li>
+    <li>[4] Lei Ba et al., “Predicting deep zero-shot CNNs using textual descriptions”, ICCV 2015.</li>
+    <li>[5] J. Dean & S. Ghemawat, “MapReduce: Simplified Data Processing on Large Clusters”, OSDI 2004.</li>
+    <li>[6] H. B. Abdalla, “A Comprehensive Survey of MapReduce Models for Big Data”, MDPI 2025.</li>
+  </ul>
+</section>
+
+<section>
+  <h3>TÀI LIỆU THAM KHẢO (2)</h3>
+  <ul style="font-size: 0.85em;">
+    <li>[7] A. Radford et al., “Learning Transferable Visual Models From Natural Language Supervision”, ICML 2021.</li>
+    <li>[8] P. Bergmann et al., “MVTec Anomaly Detection Dataset”, CVPR 2019.</li>
+    <li>[9] C. Zou et al., “VisA: A Visual Anomaly Dataset for Industrial Inspection”, CVPR 2022.</li>
+    <li>[10] X. Li et al., “Dice loss for data-imbalanced NLP tasks”, ACL 2020.</li>
+    <li>[11] T.-Y. Lin et al., “Focal loss for dense object detection”, ICCV 2017.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Cảm ơn thầy và các bạn!</h2>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    slideNumber: true,
+    transition: 'slide'
+  });
+</script>
+
+</body>
+</html>
